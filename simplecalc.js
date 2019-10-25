@@ -28,7 +28,7 @@ var  x = document.getElementById("disp1").value;
 var xx = parseInt(x);
 var  y = document.getElementById("disp2").value;
 var yy = parseInt(y);
-var result;
+var result=0;
   switch (op) {
              case 'add':
                  result = xx + yy;
@@ -40,8 +40,15 @@ var result;
                  result = xx * yy;
              break;
              case 'divi':
+                 if (yy == 0)
+                 {
+                   break;
+                 }
                  result = xx / yy;
              break;
+             default :
+                   result = 0;
+                   alert("you haven't made a selection");
          }
          document.getElementById("resu").innerHTML = "the result is " + result;
 
